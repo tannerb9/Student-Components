@@ -73,12 +73,19 @@ const students = [
   },
 ];
 
-const createStudentComponent = (name, subject, info, status) => {
+const createStudentComponent = (
+  name,
+  subject,
+  info,
+  h1Class,
+  sectionClass,
+  asideClass
+) => {
   return `
       <div class="student">
-          <h1 class="${status}">${name}</h1>
-          <section>${subject}</section>
-          <aside>${info}</aside>
+          <h1 class="${h1Class}">${name}</h1>
+          <section class="${sectionClass}">${subject}</section>
+          <aside class="${asideClass}">${info}</aside>
       </div>
   `;
 };
@@ -95,7 +102,9 @@ for (const item of students) {
       item.name,
       item.subject,
       item.info,
-      "passing"
+      "xx-large passing",
+      "bordered dashed section--padded",
+      "pushRight"
     );
   } else {
     studentComponent = createStudentComponent(
